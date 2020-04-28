@@ -33,16 +33,16 @@ sense to introduce a generic interface that would allow the conversion between s
 (and from our json model to scala types). Think a bit how such an interface should look like. You can implement it or 
 check the suggested interface below.
 
-<details>
-<summary>Example Codec</summary>
-
-```scala
-trait JsonCodec[T] {
-    def read(json: JsonValue): T
-    def write(t: T): JsonValue
-}
-```
-</details> 
+    <details>
+    <summary>Example Codec</summary>
+    
+    ```scala
+    trait JsonCodec[T] {
+        def read(json: JsonValue): T
+        def write(t: T): JsonValue
+    }
+    ```
+    </details> 
 
 2. Now that we have an interface, we can define concrete codec instances for the different scala types that we want to convert.
 I'd suggest that you start with some basic types (e.g. `String`,`Int`,`Boolean`,`List`). 
